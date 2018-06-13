@@ -85,6 +85,7 @@ var NumpyLoader = (function () {
 
     return {
         open: open,
-        ajax: ajax
+        ajax: ajax,
+        fromArrayBuffer: fromArrayBuffer
     };
 })();
