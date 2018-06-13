@@ -31,7 +31,7 @@ var NumpyLoader = (function () {
       // Hacky conversion of dict literal string to JS Object
       eval("var info = " + headerStr.toLowerCase().replace('(','[').replace('),',']'));
     
-      // Intepret the bytes according to the specified dtype
+      // Interpret the bytes according to the specified dtype
       var data;
       if (info.descr === "|u1") {
           data = new Uint8Array(buf, offsetBytes);
@@ -50,7 +50,7 @@ var NumpyLoader = (function () {
       } else if (info.descr === "<f8") {
           data = new Float64Array(buf, offsetBytes);
       } else {
-          throw new Error('unknown numeric dtype')
+          throw new Error('unknown numeric dtype');
       }
 
       return {
